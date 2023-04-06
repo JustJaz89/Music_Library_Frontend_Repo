@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const MusicTable = () => {
+function MusicTable() {
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {

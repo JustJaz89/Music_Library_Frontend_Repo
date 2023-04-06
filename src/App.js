@@ -2,8 +2,13 @@ import React from 'react';
 import MusicTable from './Components/MusicTable/MusicTable';
 
 
-
-// function App() {
+function App() {
+  return(
+    <div>
+      <MusicTable/>
+    </div>
+  )
+}
 
   // const [songs, setSongs] = useState([{id: 1, title: "Mental", album: "Instrumentals", artist: "JustJazBeats", Genre: "R&B", ReleaseDate: "01-01-2023", RunningTime: "260"}]);
 
@@ -49,12 +54,5 @@ import MusicTable from './Components/MusicTable/MusicTable';
   // );
 // }
 
-const App = () => {
-  return (
-    <div>
-      <MusicTable />
-    </div>
-  );
-};
 
 export default App;
