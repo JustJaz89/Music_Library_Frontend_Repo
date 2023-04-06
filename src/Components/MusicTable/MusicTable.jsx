@@ -8,7 +8,7 @@ const MusicTable = (props) => {
         const getAllSongs = async () => {
         const response = await axios.get('http://127.0.0.1:5000/api/songs');
         setSongs(response.data);
-        };
+        }; 
 
         getAllSongs();
     }, []);
