@@ -4,6 +4,7 @@ import SearchBar from './Components/SearchBar/SearchBar';
 
 
 function App() {
+  
   return(
     <div>
       <MusicTable />
