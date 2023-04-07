@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MusicTable from './Components/MusicTable/MusicTable';
 import AddNewSong from './Components/AddNewSong/AddNewSong';
 
 
 function App() {
 
-  // function addNewSong(song) {
-  //   let tempSongs = [song]
-  //   setSongs(tempSongs);
-  // }
+  const [songs, setSongs] = useState([{}])
+
+  function addNewSong(song) {
+    let tempSongs = [...songs, song]
+    setSongs(tempSongs);
+  }
 
   return(
     <div>
-      <MusicTable />
-      <AddNewSong />
-      {/* <AddNewSong addNewSongProperty={addNewSong} /> */}
+      <MusicTable parentSongs={songs}/>
+      <AddNewSong addNewSongProperty={addNewSong} />
     </div>
   )
 }

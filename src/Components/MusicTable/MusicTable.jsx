@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const MusicTable = (props) => {
-    const [songs, setSongs] = useState([]);
+    const [songs, setSongs] = useState([{}]);
 
     useEffect(() => {
         const getAllSongs = async () => {
@@ -39,7 +39,7 @@ const MusicTable = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {songs.map((song, index) => (
+                    {props.parentSongs.map((song, index) => (
                     <tr key={song.id}>
                         <td>{index + 1}</td>
                         <td>{song.title}</td>

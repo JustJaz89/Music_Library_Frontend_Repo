@@ -20,8 +20,8 @@ const AddNewSong = (props) => {
             release_date: release_date,
             running_time: running_time
         };
-        console.log(newSong)
-        // props.addNewSongProperty(newSong)
+        console.log(newSong);
+        props.addNewSongProperty(newSong)
     }
 
     return (
