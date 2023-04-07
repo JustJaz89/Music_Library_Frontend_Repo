@@ -1,20 +1,20 @@
 import React from 'react';
 import MusicTable from './Components/MusicTable/MusicTable';
-import SearchBar from './Components/SearchBar/SearchBar';
+import AddNewSong from './Components/AddNewSong/AddNewSong';
 
 
 function App() {
 
-  // function addNewEntry(entry) {
-  //   let tempEntries = [entry]
-  //   setEntries(tempEntries);
+  // function addNewSong(song) {
+  //   let tempSongs = [song]
+  //   setSongs(tempSongs);
   // }
 
   return(
     <div>
       <MusicTable />
-      <SearchBar />
-      {/* <SearchBar addNewEntryProperty={addNewEntry} /> */}
+      <AddNewSong />
+      {/* <AddNewSong addNewSongProperty={addNewSong} /> */}
     </div>
   )
 }
