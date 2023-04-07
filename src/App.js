@@ -8,19 +8,26 @@ function App() {
 
   const [songs, setSongs] = useState([])
 
+  useEffect(() => {
+    getAllSongs();
+  }, [])
+
+  async function getAllSongs() {
+    let response = await axios.get('http://127.0.0.1:5000/api/songs');
+    setSongs(response.data);
+  }
+
   function addNewSong(song) {
     let tempSongs = [...songs, song]
     setSongs(tempSongs);
   }
 
-  useEffect(() => {
-    const getAllSongs = async () => {
-    const response = await axios.get('http://127.0.0.1:5000/api/songs');
-    setSongs(response.data)
-    }; 
-
-    getAllSongs();
-}, []);
+  async function createSong(newSong) {
+    let response = await axios.post('http://127.0.0.1:5000/api/songs', newSong);
+    if(response.status === 201){
+      await getAllSongs();
+    }
+  }
 
   return(
     <div>
@@ -31,20 +38,13 @@ function App() {
 }
 
 export default App;
-  // useEffect[() => {
-  //   getAllSongs();
-  // }, []]
 
-  // async function getAllSongs(){
-  //   let response = await axios.get('http://127.0.0.1:5000/api/songs');
-  //   setSongs(response.data);
-  // }
 
-  // async function getAllSongs(){
-  //   try{
-  //     let response = await axios.get('http://127.0.0.1:5000/api/songs');
-  //     console.log(response.data);
-  //   } catch (ex) {
-  //     console.log('Error in API call!');
-  //     }
-  // }
+//   useEffect(() => {
+//     const getAllSongs = async () => {
+//     const response = await axios.get('http://127.0.0.1:5000/api/songs');
+//     setSongs(response.data)
+//     }; 
+
+//     getAllSongs();
+// }, []);
