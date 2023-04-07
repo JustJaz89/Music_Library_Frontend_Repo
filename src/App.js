@@ -4,11 +4,17 @@ import SearchBar from './Components/SearchBar/SearchBar';
 
 
 function App() {
-  
+
+  // function addNewEntry(entry) {
+  //   let tempEntries = [entry]
+  //   setEntries(tempEntries);
+  // }
+
   return(
     <div>
       <MusicTable />
       <SearchBar />
+      {/* <SearchBar addNewEntryProperty={addNewEntry} /> */}
     </div>
   )
 }

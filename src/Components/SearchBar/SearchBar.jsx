@@ -21,6 +21,7 @@ const SearchBar = (props) => {
             running_time: running_time
         };
         console.log(newEntry)
+        // props.addNewEntryProperty(newEntry)
     }
 
     return (
