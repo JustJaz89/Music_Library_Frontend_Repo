@@ -3,8 +3,8 @@ const MusicTable = (props) => {
 
     return (
         <div>
-            <h1>Music Library</h1>
-            <table>
+            {/* <h1>Music Library</h1> */}
+            <table className="table table-striped table-dark">
                 <thead>
                     <tr>
                         <th>Id</th>
