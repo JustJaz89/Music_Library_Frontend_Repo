@@ -31,10 +31,16 @@ function App() {
   }
 
   return(
-    <div>
-      <SearchBar handleSearchResults={SearchBar}/>
-      <MusicTable parentSongs={songs}/>
-      <AddNewSong addNewSongProperty={addNewSong} />
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-sm">
+          <MusicTable parentSongs={songs}/><br></br>
+          <AddNewSong addNewSongProperty={addNewSong} />
+        </div>
+        <div className="col-sm">
+          <SearchBar handleSearchResults={SearchBar}/>
+        </div>
+      </div>     
     </div>
   )
 }
