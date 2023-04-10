@@ -3,6 +3,7 @@ import MusicTable from './Components/MusicTable/MusicTable';
 import AddNewSong from './Components/AddNewSong/AddNewSong';
 import SearchBar from './Components/SearchBar/SearchBar';
 import axios from 'axios';
+import './App.css';
 
 
 function App() {
@@ -34,11 +35,17 @@ function App() {
     <div className="container-fluid">
       <div className="row">
         <div className="col-sm">
-          <MusicTable parentSongs={songs}/><br></br>
-          <AddNewSong addNewSongProperty={addNewSong} />
+          <div className="border-box">
+            <MusicTable parentSongs={songs}/>
+          </div>
+          <div className="border-box">
+            <AddNewSong addNewSongProperty={addNewSong} />
+          </div>
         </div>
-        <div className="col-sm">
-          <SearchBar handleSearchResults={SearchBar}/>
+        <div className="col-">
+          <div className="border-box">
+            <SearchBar handleSearchResults={SearchBar}/>
+          </div>
         </div>
       </div>     
     </div>
