@@ -1,3 +1,4 @@
+// import SearchBar from "../SearchBar/SearchBar";
 
 const MusicTable = (props) => {
 
@@ -30,6 +31,16 @@ const MusicTable = (props) => {
                     </tr>
                     );
                 })}
+                {props.data.map(row => (
+                    <tr key={row.id}>
+                        <td>{row.title}</td>
+                        <td>{row.artist}</td>
+                        <td>{row.album}</td>
+                        <td>{row.genre}</td>
+                        <td>{row.release_date}</td>
+                        <td>{row.running_time}</td>
+                    </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
