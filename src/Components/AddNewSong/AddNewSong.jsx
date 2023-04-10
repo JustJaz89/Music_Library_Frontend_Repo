@@ -28,19 +28,19 @@ const AddNewSong = (props) => {
         <form onSubmit={handleSubmit} className="form-grid">
             <div className="form-group">
                 <label>Title</label>
-                <input type="text" className="form-control" value={title} onChange={(event) => setTitle(event.target.value)} />
+                <input type="text" className="form-control" id="inputTitle" placeholder="Title" value={title} onChange={(event) => setTitle(event.target.value)} />
             </div>
             <div className="form-group">
                 <label>Artist</label>
-                <input type="text" className="form-control" value={artist} onChange={(event) => setArtist(event.target.value)} />
+                <input type="text" className="form-control" id="inputArtist" placeholder="Artist" value={artist} onChange={(event) => setArtist(event.target.value)} />
             </div>
             <div className="form-group">
                 <label>Album</label>
-                <input type="text" className="form-control" value={album} onChange={(event) => setAlbum(event.target.value)} />
+                <input type="text" className="form-control" id="inputAlbum" placeholder="Album" value={album} onChange={(event) => setAlbum(event.target.value)} />
             </div>
             <div className="form-group">
                 <label>Genre</label>
-                <input type="text" className="form-control" value={genre} onChange={(event) => setGenre(event.target.value)} />
+                <input type="text" className="form-control" id="inputGenre" placeholder="Genre" value={genre} onChange={(event) => setGenre(event.target.value)} />
             </div>
             <div className="form-group">
                 <label>Release Date</label>
