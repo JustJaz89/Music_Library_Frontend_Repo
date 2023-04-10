@@ -46,7 +46,7 @@ function App() {
         </div>
         <div className="col-sm">
           <div className="border-box">
-            <SearchBar handleSearchResults={SearchBar}/>
+            <SearchBar onSearchChange={SearchBar}/>
           </div>
         </div>
       </div>     
