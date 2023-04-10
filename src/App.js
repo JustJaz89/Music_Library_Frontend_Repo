@@ -34,6 +34,8 @@ function App() {
   return(
     <div className="container-fluid">
       <div className="row">
+        <h3 style={{margin: "1em"}}>Music
+        <medium className="text-muted">Library</medium></h3>
         <div className="col-sm">
           <div className="border-box">
             <MusicTable parentSongs={songs}/>

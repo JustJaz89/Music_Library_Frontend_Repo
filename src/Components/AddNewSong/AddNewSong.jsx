@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import "./AddNewSong.css";
 
 const AddNewSong = (props) => {
 
@@ -25,20 +25,32 @@ const AddNewSong = (props) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Title</label>
-            <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} /> <br></br>
-            <label>Artist</label>
-            <input type="text" value={artist} onChange={(event) => setArtist(event.target.value)} /> <br></br>
-            <label>Album</label>
-            <input type="text" value={album} onChange={(event) => setAlbum(event.target.value)} /> <br></br>
-            <label>Genre</label>
-            <input type="text" value={genre} onChange={(event) => setGenre(event.target.value)} /> <br></br>
-            <label>Release Date</label>
-            <input type="date" value={release_date} onChange={(event) => setReleaseDate(event.target.value)} /> <br></br>
-            <label>Running Time</label>
-            <input type="number" value={running_time} onChange={(event) => setRunningTime(parseFloat(event.target.value))} />
-            <button type="submit">Add</button>
+        <form onSubmit={handleSubmit} className="form-grid">
+            <div className="form-group">
+                <label>Title</label>
+                <input type="text" className="form-control" value={title} onChange={(event) => setTitle(event.target.value)} />
+            </div>
+            <div className="form-group">
+                <label>Artist</label>
+                <input type="text" className="form-control" value={artist} onChange={(event) => setArtist(event.target.value)} />
+            </div>
+            <div className="form-group">
+                <label>Album</label>
+                <input type="text" className="form-control" value={album} onChange={(event) => setAlbum(event.target.value)} />
+            </div>
+            <div className="form-group">
+                <label>Genre</label>
+                <input type="text" className="form-control" value={genre} onChange={(event) => setGenre(event.target.value)} />
+            </div>
+            <div className="form-group">
+                <label>Release Date</label>
+                <input type="date" className="form-control" value={release_date} onChange={(event) => setReleaseDate(event.target.value)} />
+            </div>
+            <div className="form-group">
+                <label>Running Time</label>
+                <input type="number" className="form-control" value={running_time} onChange={(event) => setRunningTime(parseFloat(event.target.value))} />
+            </div>
+            <button type="submit" className="btn btn-primary" style={{"margin-top": "1em"}} >Add</button>
         </form>
     );
 };
