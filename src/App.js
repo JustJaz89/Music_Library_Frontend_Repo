@@ -44,7 +44,7 @@ function App() {
             <AddNewSong addNewSongProperty={addNewSong} />
           </div>
         </div>
-        <div className="col-sm">
+        <div className="col-">
           <div className="border-box">
             <SearchBar onSearchChange={SearchBar}/>
           </div>

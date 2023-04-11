@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 
 const MusicTable = (props) => {
 
@@ -35,5 +37,47 @@ const MusicTable = (props) => {
         </div>
     );
 };
+
+function MusicSearch() {
+    const [query, setQuery] = useState("");
+    const [filteredData, setFilteredData] = useState([]);
+  
+    function handleSearch(event) {
+      const newQuery = event.target.value;
+      setQuery(newQuery);
+      const newData = query.filter(
+        (item) =>
+          item.title.includes(newQuery) ||
+          item.artist.includes(newQuery) ||
+          item.album.includes(newQuery) ||
+          item.genre.includes(newQuery) ||
+          item.releaseDate.includes(newQuery)
+      );
+      setFilteredData(newData);
+    }
+  
+    return (
+        <div>
+          <input type="text" placeholder="Search" onChange={handleSearch} />
+          {filteredData.length > 0 ? (
+            <MusicTable data={filteredData} />
+          ) : (
+            <MusicTable data={MusicSearch} />
+          )}
+        </div>
+      );
+    }
+
+const data = [
+    {
+        id: 1,
+        title: "",
+        artist: "JustJazBeats",
+        album: "Instrumentals",
+        genre: "R&B",
+        releaseDate: "",
+        runningTime: "",
+    },
+]
 
 export default MusicTable;
