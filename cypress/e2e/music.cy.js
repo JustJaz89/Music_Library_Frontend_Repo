@@ -35,7 +35,7 @@ describe("Filter/Search functionality", () => {
   })
 
   it("should display only the matching songs when filtering by title", () => {
-    cy.get("search-input").type("Song")
+    cy.get("search-input").type("Title")
       cy.get("search-button").click()
       cy.contains("Song - Artist")
     })
@@ -53,7 +53,7 @@ describe("Filter/Search functionality", () => {
   })
 
   it("should display only the matching songs when filtering by genre", () => {
-    cy.get("search-input").clear().type("Trap")
+    cy.get("search-input").clear().type("Genre")
     cy.get("search-button").click()
     cy.contains("Song - Artist")
   })
