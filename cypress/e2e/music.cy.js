@@ -1,5 +1,35 @@
-describe('Add New Song form', () => {
+describe('Add Song form', () => {
   it('passes', () => {
     cy.visit('http://localhost:3000/')
+
+    cy.get('["title-input"]').type("Title")
+    cy.get('["artist-input"]').type("Artist")
+    cy.get('["album-input"]').type("Album")
+    cy.get('[genre-input"]').type("Genre")
+    cy.get('["release-date-input"]').type("Release Date")
+    cy.get('["running-time-input"]').type("Running Time")
+    cy.get('["submit-button"]').click()
+    cy.url().should("include", "songs")
+    cy.contains("Song - Artist")
   })
+})
+    // cy.get('[data-ctest=title-input]').type('Title')
+    // cy.get('[data-cy=artist-input]').type('Artist')
+    // cy.get('[data-cy=album-input]').type('Album')
+    // cy.get('[data-cy=genre-input]').type('Genre')
+    // cy.get('[data-cy=release_date-input]').type('Release Date')
+    // cy.get('[data-cy=running_time-input]').type('Running Time')
+    // cy.get('[data-cy=submit-button]').click()
+    // cy.contains('type').click()
+describe("Filter/Search functionality", () => {
+  before(() => {
+    cy.visit()
+    cy.get("title-input").type("Title")
+    cy.get("artist-input").type("Artist")
+    cy.get("album-input").type("Album")
+    cy.get("genre-input").type("Genre")
+    cy.get("release-date-input").type("Release Date")
+    cy.get("running-time-input").type("Running Time")
+  })
+  
 })
