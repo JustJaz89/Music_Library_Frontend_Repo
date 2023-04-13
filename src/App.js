@@ -31,6 +31,22 @@ function App() {
     }
   }
 
+  const filterSongs = (e) => {
+    let filterValue = e.target.value;
+    if (filterValue === "") {
+      getAllSongs();
+    } else {
+     let filteredSongs = songs.filter(
+        (x) =>
+          x.title.toLowerCase().includes(filterValue.toLowerCase()) ||
+          x.artist.toLowerCase().includes(filterValue.toLowerCase()) ||
+          x.album.toLowerCase().includes(filterValue.toLowerCase()) ||
+          x.genre.toLowerCase().includes(filterValue.toLowerCase())
+      );
+      setSongs(filteredSongs);
+   }
+  };
+
   return(
     <div className="container-fluid">
       <div className="row">
@@ -46,7 +62,7 @@ function App() {
         </div>
         <div className="col-">
           <div className="border-box">
-            <SearchBar onSearchChange={SearchBar}/>
+            <SearchBar filterSongs={filterSongs}/>
           </div>
         </div>
       </div>     
