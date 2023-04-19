@@ -31,8 +31,8 @@ function App() {
     }
   }
 
-  const filterSongs = (e) => {
-    let filterValue = e.target.value;
+  const filterSongs = (event) => {
+    let filterValue = event.target.value;
     if (filterValue === "") {
       getAllSongs();
     } else {
